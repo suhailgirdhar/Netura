@@ -1,0 +1,36 @@
+<%- include("header") %>
+  <%- include("navbar") %>
+  
+  
+  <body class="login-form-bg">
+    
+    <section class="login-form">
+      
+      <div class="form-group">
+          <!-- <%- include("flashMessages") %> -->
+
+          <h4>Please enter your details</h4>
+
+          <form action="/register" method="post">
+            <input type="text" class="form-control muted-input mt-4" name="fullname" placeholder="fullname" required />
+            <input type="text" class="form-control muted-input mt-4" name="username" placeholder="username" minlength="4" maxlength="10"  required />
+            <input type="password" class="form-control muted-input mt-4 mb-2" name="password" placeholder="password" minlength="4" maxlength="10" required />
+            <small>We recommend complex password for better security</small>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px">Sign up</button>
+          </form>
+
+          <form action="/" method="get">
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">
+              Back to Home
+            </button>
+
+        </div>
+        </form>
+      </section>
+
+      <%- include("mobileSidebar") -%>
+      <%- include("scripts") -%>
+    </body>
+
+    </html>

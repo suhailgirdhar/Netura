@@ -1,0 +1,390 @@
+:root {
+  --blue-dark: #007069;
+  --blue: #50c5bc;
+}
+
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* -------------- CONTACT SECTION -------------- */
+
+.self-row-center {
+  justify-content: center;
+}
+
+.self-row-spc-arnd {
+  justify-content: space-around;
+}
+
+.categories-one__img img {
+  height: 180px;
+  width: 180px;
+}
+
+.login {
+  margin: 0px 10px;
+  color: var(--blue-dark);
+}
+
+.login:hover {
+  color: var(--blue);
+}
+
+.mob-nav-login a {
+  color: white;
+}
+
+.mob-nav-login li {
+  margin: 20px 0;
+}
+
+.mob-nav-login {
+  list-style-type: none;
+}
+.mob-nav-login a:hover {
+  color: var(--blue);
+}
+
+/* ------------ FORMS -----------------*/
+
+.order-form-bg {
+  background-color: #c4f0ec;
+}
+
+/* .login-input {
+  margin: 20px auto 10px;
+} */
+
+.login-form {
+  width: 350px;
+  margin: 100px auto;
+  padding: 60px 50px;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: lightgrey;
+}
+
+.muted-input {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.btn {
+  border: none;
+  background-color: var(--blue-dark);
+}
+
+.btn:hover {
+  background-color: var(--blue);
+}
+
+.btn.disabled {
+  background-color: lightgrey;
+  color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+  .login {
+    margin: 20px 10px;
+    color: var(--blue-dark);
+  }
+}
+
+/* ----------- PRODUCT PAGE-----------*/
+
+.row {
+  align-items: center;
+}
+
+.product-description-page-2 {
+  margin: 50px 5%;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: rgb(211, 211, 211, 0.4);
+}
+
+.product-img-section-2 {
+  text-align: center;
+}
+
+.pincode-form {
+position: absolute;
+right: 5%;
+width: 400px;
+}
+
+.pincode-form input {
+width: 60%;
+display: inline;
+}
+
+.pincode-form button {
+  width: 38%;
+  display: inline;
+}
+
+@media only screen and (min-width: 575px), (max-width: 700px) {
+  .product-description-page-2 {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/*-------------------------------------------*/
+
+.product-description-page {
+  margin: 50px 5%;
+  padding: 0 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: rgb(211, 211, 211, 0.4);
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+/* .product-selection {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: lightgrey;
+} */
+
+.product-img-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-img {
+  width: 80px;
+}
+
+.product-description-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+
+.qty-btn {
+  height: 40px;
+  width: 40px;
+  color: white;
+  border-style: none;
+  border-radius: 50%;
+  background-color: var(--blue-dark);
+}
+
+.qty-btn:hover {
+  background-color: var(--blue);
+}
+
+.input-show-only {
+  width: 60px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-style: none;
+  background-color: transparent;
+}
+
+.pay {
+  border-style: none;
+  background-color: transparent;
+}
+
+.input-show-only:focus {
+  outline: none;
+}
+
+#amount {
+  width: 100px;
+  font-size: 1.5rem;
+  border-style: none;
+  background-color: transparent;
+}
+
+#amount:focus {
+  outline: none;
+}
+
+.checkout-btn {
+  color: white;
+  height: 50px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  border-style: none;
+  border-radius: 50px;
+  background-color: var(--blue-dark);
+}
+
+.checkout-btn:hover {
+  background-color: var(--blue);
+}
+
+/*-------------- PROFILE ------------------*/
+
+.sidebar-link {
+  color: grey!important;
+  font-size: 1.2rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  border-radius: .25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+
+.me-2 {
+  margin-right: .5rem !important;
+}
+
+
+
+/* .profile-sidebar {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  
+} */
+
+/* .profile-sidebar-section {
+  display: none;
+} */
+
+/* .profile-sidebar a {
+  height: 60px;
+  border-top-style: solid;
+  border-top-color: lightgrey;
+}
+
+.profile-image-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 50px 50px;
+  
+}
+
+.profile-image-section img{
+  width: 200px;
+  border-style: solid;
+  border-color: antiquewhite;
+}
+
+.profile-image-section h2{
+  margin-left: 50px;
+} */
+
+
+
+.my-orders-list {
+  padding-left: 0;
+}
+
+.my-orders-list li {
+  list-style-type: none!important;
+}
+
+.sidebarBuffer{
+  align-items: inherit!important;
+}
+
+/*-------------- PROFILE ------------------*/
+
+.order-delete-btn { 
+  right: 20px
+}
+
+
+.panel-order .row {
+  border-bottom: 1px solid #ccc;
+}
+
+.panel-order .row:last-child {
+  border: 0px;
+}
+
+.panel-order .row .col-md-1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.panel-order .row .col-md-1 img {
+  width: 50px;
+  max-height: 50px;
+}
+
+.panel-order .row .row {
+  border-bottom: 0;
+}
+
+.panel-order .row .col-md-11 {
+  border-left: 1px solid #ccc;
+}
+
+.panel-order .row .row .col-md-12 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.panel-order .row .row .col-md-12:last-child {
+  font-size: 11px;
+  color: #555;
+  background: #efefef;
+}
+
+.panel-order .btn-group {
+  margin: 0px;
+  padding: 0px;
+}
+
+.panel-order .panel-body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.panel-order .panel-deading {
+  margin-bottom: 0;
+}
+
+/*---------- PRODUCT DESCRIPTION PAGE --------*/
+
+.muted-text {
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  color: rgb(161, 158, 158)!important;
+}
+
+.less-muted-text {
+  color: rgb(126, 124, 124)!important;
+}
+
+.product-image {
+  width: 220px;
+}

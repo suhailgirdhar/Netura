@@ -1,0 +1,100 @@
+<%- include("header") %>
+<%- include("navbar") %>
+
+  <body class="order-form-bg">
+    <section class="login-form">
+      <form action="/verify" method="post">
+        <div class="form-group">
+          <label for="enteredOTP" style="margin-bottom: 20px">
+            <%= verifyText %>
+          </label>
+
+          <input type="text" class="form-control" name="enteredOTP" placeholder="Enter OTP" required />
+
+          <input type="hidden" id="status" value="<%= status %>" />
+
+          <small class="form-text text-muted">Your OTP is valid for one minute.</small>
+        </div>
+
+        <button name="verify" id="verifyBtn" type="submit" class="btn btn-primary"
+          style="width: 100%; margin-top: 30px">
+          Verify
+        </button>
+
+      </form>
+
+      <form action="/pay" method="post">
+        <button disabled name="pay" id="payBtn" type="submit" class="btn btn-primary disabled" value="100"
+          style="width: 100%; margin-top: 30px">
+          Pay
+        </button>
+      </form>
+
+
+
+      <form action="/" method="get">
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">
+          Back to Home
+        </button>
+      </form>
+
+    </section>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      if (document.getElementById("status").value === "verified") {
+        const payBtn = document.getElementById("payBtn")
+        const verifyBtn = document.getElementById("verifyBtn")
+        verifyBtn.disabled = true
+        payBtn.disabled = false
+        verifyBtn.classList.toggle("disabled")
+        payBtn.classList.toggle("disabled")
+      }
+
+      document.getElementById('payBtn').onclick = async function (e) {
+        e.preventDefault();
+
+        let value = document.getElementById("payBtn").value;
+
+        let response = await fetch("/", {
+          method: "POST"
+        })
+
+        let orderData = response.json();
+
+        var options = {
+          "key": "rzp_test_3tyLcoocgx0G8x",
+          "amount": value,
+          "currency": "INR",
+
+          "order_id": orderData.id,
+          "handler": function (response) {
+            // alert(response.razorpay_payment_id);
+            // alert(response.razorpay_order_id);
+            // alert(response.razorpay_signature)
+            window.location = "/success/" + response.razorpay_payment_id;
+
+          }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        rzp1.on('payment.failed', function (response) {
+          alert(response.error.code);
+          alert(response.error.description);
+          alert(response.error.source);
+          alert(response.error.step);
+          alert(response.error.reason);
+          alert(response.error.metadata.order_id);
+          alert(response.error.metadata.payment_id);
+        });
+        
+      }
+
+    </script>
+
+<%- include("mobileSidebar") -%>
+<%- include("scripts") -%>
+  </body>
+
+  </html>

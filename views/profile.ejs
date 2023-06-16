@@ -1,0 +1,72 @@
+<%- include("header") -%> <%- include("navbar") -%>
+
+<div class="container profile-body">
+  <div class="main-body mt-5">
+    <div class="row sidebarBuffer">
+
+      <%- include("profileSidebar") -%>
+      
+      <div class="col-lg-8">
+        <h4 class="mb-5">Order History</h4>
+
+        <% if (orders.length===0) { %>
+        <p>No Orders to display</p>
+        <% } else { %>
+
+        <div class="container bootdey">
+          <div class="panel panel-default panel-order">
+            <% orders.forEach(order => { %>
+            <div class="panel-body">
+              <div class="row border rounded mt-5 mb-5">
+                <div class="col-md-1">
+                  <img
+                    src="assets/images/protein-images/netura-image-1.png"
+                    class="media-object img-thumbnail"
+                  />
+                </div>
+
+                <div class="col-md-11">
+                  <div class="row">
+                    <div class="col-md-12 position-relative">
+                      <form
+                        class="position-absolute order-delete-btn"
+                        method="post"
+                        action="/profile/delete-order"
+                      >
+                        <button
+                          type="submit"
+                          class="label label-danger"
+                          name="orderDeleteBtn"
+                          value=<%= order._id %>
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </form>
+                      <span><strong> <%= order.product %> </strong></span>
+                      <br />
+                      Quantity : <%= order.qty %>
+                      <br />
+                      Cost: <%= order.amount %> <%= order.currency %>
+                      <br />
+                      <p>Payment Id: <%= order.paymentId %></p>
+                    </div>
+                    <div class="col-md-12">
+                      order made on: <%= order.createdAt %> by
+                      <a href="/profile"> <%= username %> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% })} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include("mobileSidebar") -%>
+<%- include("scripts") -%>
+<%- include("footer") -%>

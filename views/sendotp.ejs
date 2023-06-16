@@ -1,0 +1,35 @@
+<%- include("header") %>
+<%- include("navbar") %>
+
+  <body>
+    <section class="login-form">
+      <form action="/sendotp" method="post">
+        <div class="form-group">
+          <h5>You are ordering <%= qty %> Pcs of Netura for Rs. <%=amount%>/-</h5>
+          <label for="contactNumber" style="margin: 30px 0">Enter your mobile number to proceed for order</label>
+
+          <input type="number" class="form-control muted-input" name="contactNumber"
+            placeholder="Enter your mobile number" required />
+
+          <small class="form-text text-muted">We'll never share your details with anyone else.</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px">
+          Send OTP
+        </button>
+      </form>
+      <form action="/" method="get">
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">
+          Back to Home
+        </button>
+      </form>
+
+
+    </section>
+
+    <%- include("mobileSidebar") -%>
+    <%- include("scripts") -%>
+
+  </body>
+
+  </html>

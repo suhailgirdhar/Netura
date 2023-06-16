@@ -1,0 +1,93 @@
+<%- include("header") -%>
+    <%- include("navbar") -%>
+
+        <div class="container my-5 py-5">
+            <form action="/orderplaced" method="post">
+                <div class="row">
+                    <div class="mx-auto col-md-8 mb-4">
+                        <div class="mb-4 text-center">
+                            <h4>Thank you for shopping with us.</h4>
+                            <p>Your Payment id is
+                                <input class="input-show-only w-auto" readonly name="paymentId" style="font-size: 1rem;"
+                                    value=<%=id %> />
+                            </p>
+                        </div>
+                        <div class="card mb-4">
+
+                            <div class="card-header py-3">
+                                <h5 class="mb-0 text-font text-uppercase">Delivery address</h5>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row mb-4">
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example3">Name</label>
+                                        <input type="text" class="form-control" name="name" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example6">Contact</label>
+                                        <input type="number" id="contact" class="form-control" name="contact"
+                                            required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example5">Flat/House No.</label>
+                                        <input type="text" class="form-control" name="house" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example6">City</label>
+                                        <input type="text" class="form-control" name="city" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example6">State</label>
+                                        <input type="text" class="form-control" name="state" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form11Example6">Pincode</label>
+                                        <input type="number" id="pincode" class="form-control" name="pincode"
+                                            required />
+                                    </div>
+
+                                    <div class="form-outline ">
+                                        <label class="form-label" for="form11Example7">Additional information</label>
+                                        <textarea class="form-control" id="form11Example7" rows="4"></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn col-md-8 mb-4 text-white">
+                                    Add Delivery Address
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+
+        <script>
+
+            document.getElementById("contact").addEventListener("input", (e) => {
+                const maxlength = 10
+                if (e.target.value.length > maxlength) {
+                    e.target.value = e.target.value.slice(0, maxlength)
+                }
+            })
+
+            document.getElementById("pincode").addEventListener("input", (e) => {
+                const maxlength = 6
+                if (e.target.value.length > maxlength) {
+                    e.target.value = e.target.value.slice(0, maxlength)
+                }
+            })
+
+        </script>
+
+        <%- include("mobileSidebar") -%>
+        <%- include("scripts") -%>
+        </body>

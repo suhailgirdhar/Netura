@@ -1,0 +1,85 @@
+<%- include("header") -%> <%- include("navbar") -%>
+
+        <div class="container profile-body">
+            <div class="main-body mt-5">
+                <div class="row sidebarBuffer">
+                    <%- include("profileSidebar") -%>
+                        <div class="col-lg-8">
+                            <form action="/settings" method="post">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row mb-4">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Full Name</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="text" class="form-control muted-input" placeholder="Full Name"
+                                                    name="fullname" value=<%=fullname %>>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Email</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="" class="form-control muted-input" placeholder="Email" name="email"
+                                                    value=<%=email %>>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Contact</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="number" id="name" class="form-control muted-input"
+                                                    placeholder="Contact" name="contact" value=<%=contact %>>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Address</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="text" class="form-control muted-input" placeholder="Address"
+                                                    name="address" value=<%=address %>>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Pincode</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="number" class="form-control muted-input" placeholder="Pincode"
+                                                    name="pincode" value=<%=pincode %>>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-3"></div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <button type="submit" class="btn btn-primary px-4">Update
+                                                    Profile</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const input = document.getElementById("name").addEventListener("input", (e) => {
+                console.log(document.getElementById("name").value)
+            }) 
+        </script>
+
+<%- include("mobileSidebar") -%>
+<%- include("scripts") -%>

@@ -1,0 +1,38 @@
+<%- include("header") %>
+  <%- include("navbar") %>
+
+    <body class="order-form-bg">
+
+      <section class="login-form">
+
+        <div class="form-group">
+
+          <small class="form-text text-muted">
+            <%= loggedOutStatement %>
+          </small>
+          <h4>Please enter your login details</h4>
+
+          <form action="/login" method="post">
+            <input type="text" class="form-control muted-input mt-4" name="username" placeholder="username" required />
+            <input type="password" class="form-control muted-input mt-4" name="password" placeholder="password" required />
+            <a href="/forgot-password" style="font-size: 0.8rem;" class="text-right d-block text-end">Forgot password?</a>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 30px">Log in</button>
+          </form>
+
+          <form action="/" method="get">
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px">
+              Back to Home
+            </button>
+
+        </div>
+        </form>
+      </section>
+
+      
+
+      <%- include("mobileSidebar") -%>
+      <%- include("scripts") -%>
+    </body>
+
+    </html>

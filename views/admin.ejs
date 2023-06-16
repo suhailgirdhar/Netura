@@ -1,0 +1,13 @@
+<h1>Welcome to admin page</h1>
+<h1>Orders: </h1>
+
+<div>
+  <% for (let i=0; i<ordersList.length; i++) { %>
+     <ul>
+        <li>
+            <%= ordersList[i].paymentId %> 
+        </li>
+     </ul>
+    <% } %>
+  <!-- <%= ordersList %> -->
+</div>

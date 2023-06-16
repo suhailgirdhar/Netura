@@ -1,0 +1,82 @@
+<%- include("header") -%>
+  <%- include("navbar") -%>
+
+
+    <div class="product-description-page-2 row">
+
+      <div class="product-img-section-2 col-sm-2">
+        <img class="product-img" src="assets/images/protein-images/netura-image-1.png" />
+      </div>
+
+      <form class="col-sm-10" method="post" action="/product">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <h3>Netura</h3>
+            <h3>Nutritious Snack</h3>
+            <p>Your healthy food</p>
+          </div>
+
+          <section class="col-lg-3 col-md-4 col-sm-12">
+            <h4 style="display: inline">Rs.</h4>
+            <input id="amount" value="1499" name="amount" readonly />
+          </section>
+
+          <div class="col-lg-3 col-md-4 col-sm-12">
+            <button class="qty-btn" id="subtract">-</button>
+            <input id="qty" class="input-show-only" value="1" name="qty" readonly />
+            <button class="qty-btn" id="add">+</button>
+          </div>
+
+          <button class="col-lg-3 col-md-4 col-sm-12 checkout-btn" type="submit">Checkout</button>
+        </div>
+      </form>
+    </div>
+
+    <form class="pincode-form" method="post" action="/pincodeavailability">
+      <input type="number" id="pincode" class="form-control pinocde-input" placeholder="pincode" required>
+      <button type="submit" class="btn btn-primary">Check Pincode</button>
+      <small>
+        <%= pincodeAvail %>
+      </small>
+    </form>
+
+
+    <script>
+      document.getElementById("amount").value = 1499
+      let qty = document.getElementById("qty").value;
+      let itemPrice = 1499
+
+      document.getElementById("add").addEventListener("click", (e) => {
+        qty++;
+        document.getElementById("qty").value = qty;
+        document.getElementById("amount").value = qty * itemPrice;
+        e.preventDefault();
+      });
+
+      document.getElementById("subtract").addEventListener("click", (e) => {
+        if (qty > 1) {
+          qty--;
+          document.getElementById("qty").value = qty;
+          document.getElementById("amount").value = qty * itemPrice;
+        }
+        e.preventDefault();
+      });
+
+      document.getElementById("pincode").addEventListener("input", (e) => {
+        const maxlength = 6
+        if (e.target.value.length > maxlength) {
+          e.target.value = e.target.value.slice(0, maxlength)
+        }
+      })
+
+
+    </script>
+
+      <%- include("mobileSidebar") -%>
+      <%- include("scripts") -%>
+
+    </body>
+
+    </html>
