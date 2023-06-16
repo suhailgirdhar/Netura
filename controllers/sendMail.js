@@ -9,7 +9,7 @@ const sendMail = async (receiverName, to, subject, html ) => {
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-              user: "Suhail.kaswans@gmail.com", // generated ethereal user
+              user: process.env.EMAIL, // generated ethereal user
               pass: process.env.GMAILPASSCODE, // generated ethereal password
             },
           });
@@ -20,7 +20,7 @@ const sendMail = async (receiverName, to, subject, html ) => {
           // console.log("finalHTML: ", finalHTML)
 
           let info = await transporter.sendMail({
-            from: '"Netura" <suhail.kaswans@gmail.com>', // sender address
+            from: `"Netura" <${process.env.EMAIL}>`, // sender address
             to, // list of receivers
             subject, // Subject line
             html

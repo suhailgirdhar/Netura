@@ -23,11 +23,11 @@ const resetPassword = async (req, res, next) => {
               { new: true }
             ).then((user) => {
             return next()
-              res.status(200).send({
-                success: true,
-                msg: "Password reset successfully",
-                data: user,
-              });
+              // res.status(200).send({
+              //   success: true,
+              //   msg: "Password reset successfully",
+              //   data: user,
+              // });
             });
           }
         });
